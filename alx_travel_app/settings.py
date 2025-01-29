@@ -156,3 +156,12 @@ schema_view = get_schema_view(
 )
 
 # In the urls.py, we'll link to this schema view
+
+# Celery Configuration
+CELERY_BROKER_URL = 'amqp://localhost'  # RabbitMQ URL
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+# Optional: Celery result backend (e.g., for debugging or saving task states)
+CELERY_RESULT_BACKEND = 'django-db'
+
